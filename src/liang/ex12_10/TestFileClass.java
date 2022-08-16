@@ -2,7 +2,7 @@ package liang.ex12_10;
 
 public class TestFileClass {
     public static void main(String[] args) {
-        java.io.File file = new java.io.File("image/us.gif");
+        java.io.File file = new java.io.File("C:\\Users\\Farrukh\\Desktop\\test2.txt");
         System.out.println("Does it exist? " + file.exists());
         System.out.println("The file has " + file.length() + " bytes");
         System.out.println("Can it be read? " + file.canRead());
@@ -13,7 +13,7 @@ public class TestFileClass {
         System.out.println("Is it hidden? " + file.isHidden());
         System.out.println("Absolute path is " +
                 file.getAbsolutePath());
-        System.out.println("Last modified on " +
-                new java.util.Date(file.lastModified()));
+        System.out.println("Last modified on " + file.lastModified());
+        System.out.println("Last modified on " + new java.util.Date(file.lastModified()));
     }
 }

@@ -1,5 +1,7 @@
 package liang.ex12_12;
 
+import java.io.File;
+import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class ReadFileFromURL {
@@ -7,17 +9,24 @@ public class ReadFileFromURL {
         System.out.print("Enter a URL: ");
         String URLString = new Scanner(System.in).next();
 
-        try {
+
+        try (
+
+                PrintWriter output = new PrintWriter(new File("index.html"));
+        )
+        {
             java.net.URL url = new java.net.URL(URLString);
-            int count = 0;
             Scanner input = new Scanner(url.openStream());
+            int count = 0;
+
             while (input.hasNext()) {
                 String line = input.nextLine();
+                output.println(line);
                 count += line.length();
             }
 
             System.out.println("The file size is " + count + " characters");
-        } catch (java.net.MalformedURLException ex) {
+        }catch (java.net.MalformedURLException ex) {
             System.out.println("Invalid URL");
         } catch (java.io.IOException ex) {
             System.out.println("I/O Errors: no such file");
