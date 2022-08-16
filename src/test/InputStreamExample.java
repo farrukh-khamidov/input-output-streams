@@ -1,3 +1,5 @@
+package test;
+
 import java.io.InputStream;
 
 public class InputStreamExample {

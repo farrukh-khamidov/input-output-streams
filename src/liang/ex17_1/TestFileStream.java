@@ -1,4 +1,4 @@
-package liang.ex17_4;
+package liang.ex17_1;
 
 import java.io.*;
 
@@ -6,7 +6,7 @@ public class TestFileStream {
     public static void main(String[] args) throws IOException {
         try (
                 // Create an output stream to the file
-                BufferedOutputStream output = new BufferedOutputStream(new FileOutputStream("temp.dat"));
+                FileOutputStream output = new FileOutputStream("temp.txt");
         ) {
             // Output values to the file
             for (int i = 1; i <= 10; i++)
@@ -15,7 +15,7 @@ public class TestFileStream {
 
         try (
 // Create an input stream for the file
-                BufferedInputStream input = new BufferedInputStream(new FileInputStream("temp.dat"));
+                FileInputStream input = new FileInputStream("temp.txt");
         ) {
             // Read values from the file
             int value;
